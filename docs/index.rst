@@ -9,7 +9,7 @@ Welcome to erpnext-api's documentation!
 .. toctree::
    :maxdepth: 2
    :caption: Contents:
-
+   
    introduction
    general-guidance
    authentication
