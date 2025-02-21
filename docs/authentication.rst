@@ -3,6 +3,10 @@ Authentication
 
 - To login, make a **POST** request as below
 
+- Endpoint: |BASE_API_URL|.user.login
+- Method: **POST**
+- Payload
+
 .. code-block:: json
 
     {
