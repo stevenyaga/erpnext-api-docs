@@ -6,9 +6,9 @@
 # -- Project information -----------------------------------------------------
 # https://www.sphinx-doc.org/en/master/usage/configuration.html#project-information
 
-project = 'Erpnext API'
-copyright = '2025, Steve Nyaga'
-author = 'Steve Nyaga<stevenyaga@gmail.com>'
+project = 'Erpnext Eclectics API'
+copyright = '2025, Pointershub Ltd.'
+author = 'Pointershub Ltd'
 
 # -- General configuration ---------------------------------------------------
 # https://www.sphinx-doc.org/en/master/usage/configuration.html#general-configuration
