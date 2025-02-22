@@ -9,16 +9,19 @@ Welcome to erpnext-api's documentation!
 .. toctree::
    :maxdepth: 2
    :caption: Contents:
-
+   
    introduction
    general-guidance
    authentication
    fiscal-year
    payment-mode
    account
+   cost-center
+   project
    journal-entry
    payment
    purchase-invoice
+   budget
    financial-reports
 
 Indices and tables
