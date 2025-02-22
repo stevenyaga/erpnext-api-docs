@@ -9,7 +9,7 @@ ERPNext API Integration
 
 .. code-block:: bash
 
-    sphinx-build /docs docs/_build/
+    sphinx-build /docs docs/html/
 
 
 - To serve the docs locally

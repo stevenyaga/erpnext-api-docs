@@ -46,7 +46,8 @@ General Ledger
  
     - **from_date** (optional). Start date by which you wish to filter transactions. The date must fall within the selected fiscal year
     - **from_date** (optional). End date by which you wish to filter transactions. The date must fall within the selected fiscal year 
-   
+
+- The account parameter in the payload accepts a list of account numbers
 - Endpoint: |BASE_API_URL|.financial_report.general_ledger
 - Method: **POST**
 - Payload:
@@ -74,7 +75,7 @@ General Ledger
         "show_remarks": false,
         "ignore_err": false,
         "ignore_cr_dr_notes": false
-    }
+    } 
 
 - Headers:
 

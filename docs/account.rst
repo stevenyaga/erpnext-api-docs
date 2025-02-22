@@ -33,8 +33,7 @@ Get list of accounts
         "Authorization": "token <YOUR_TOKEN>"
     }
 
-- See the guidance on Document List API Parameters section for direction on the parameters to provide
-
+- Refer to `Document List API Parameters <general-guidance.html>`_ for guidance on the payload
 
 Create an Account
 -----------------

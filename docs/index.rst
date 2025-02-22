@@ -16,9 +16,12 @@ Welcome to erpnext-api's documentation!
    fiscal-year
    payment-mode
    account
+   cost-center
+   project
    journal-entry
    payment
    purchase-invoice
+   budget
    financial-reports
 
 Indices and tables
