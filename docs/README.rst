@@ -9,7 +9,7 @@ ERPNext API Integration
 
 .. code-block:: bash
 
-    sphinx-build /docs docs/html/
+    sphinx-build docs/ docs/html/
 
 
 - To serve the docs locally
@@ -29,7 +29,7 @@ ERPNext API Integration
    
             .. code-block:: bash
 
-                sphinx-build -M simplepdf . _build
+                sphinx-build -M simplepdf docs/ _build
 
        - Navigate to the _build directory and the PDF output will be inside that folder
 
