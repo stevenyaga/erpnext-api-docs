@@ -23,6 +23,7 @@ Welcome to erpnext-api's documentation!
    purchase-invoice
    budget
    financial-reports
+   delete-data
 
 Indices and tables
 ==================
