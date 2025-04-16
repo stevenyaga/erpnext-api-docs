@@ -61,7 +61,15 @@ Create a Multi Currency Journal Entry
 
 .. note:: 
 
-    You only provide the exchange_rate value for only the accounts whose currency is different from the base currency
+    - You provide the exchange_rate at the parent level
+    - Both legs of the journal entry must be denominated in the same currency
+
+.. warning::
+
+    Because of the complex nature of multicurrency such that we allow postings against an account in different currencies, it means that we can only make multicurrency posting against only accounts that **DO NOT HAVE** currency specified for them. This is because if we were to allow, then we will have to deal with two levels of exchange rate conversion i.e
+
+        - transaction currency -> account currency
+        - account currency -> company base currency
 
 
 - Endpoint: |BASE_API_URL|.journal_entry.create
@@ -71,6 +79,11 @@ Create a Multi Currency Journal Entry
 .. code-block:: json
 
     {
+        "transaction_date": "2025-04-10",
+        "created_by": "Nyaga",
+        "created_on": "2025-04-16",
+        "approved_by": "Steve",
+        "approved_on": "2025-04-20",
         "cheque_no": "",
         "is_opening": "No",
         "posting_date": "2025-01-10",
@@ -78,21 +91,21 @@ Create a Multi Currency Journal Entry
         "user_remark": "No Other comments",
         "voucher_type": "Journal Entry",
         "transaction_code": "CPO",
-        "accounts": [
-            {
-            "account": "5222",
-            "party_type": null,
-            "party": null,
-            "debit_in_account_currency": 0,
-            "credit_in_account_currency": 2,
-            "exchange_rate": 2598.4401
+        "transaction_currency": "USD",
+        "exchange_rate": 130,
+        "accounts": [{
+                "account": "1110",
+                "party_type": null, 
+                "party": null,
+                "debit_in_transaction_currency": 0,
+                "credit_in_transaction_currency": 2000
             },
             {
-            "account": "1310",
-            "party_type": "Customer",
-            "party": "Nyaga",
-            "debit_in_account_currency": 5196.8802,
-            "credit_in_account_currency": 0
+                "account": "1310",
+                "party_type": "Customer", 
+                "party": "Nyaga",
+                "debit_in_transaction_currency": 2000,
+                "credit_in_transaction_currency": 0
             }
         ]
     }
