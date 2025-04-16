@@ -11,27 +11,33 @@ Create a Journal Entry
 .. code-block:: json
 
     {
-        "cheque_date": null,
+        "transaction_date": "2025-04-10",
+        "created_by": "Nyaga",
+        "created_on": "2025-04-16",
+        "approved_by": "Steve",
+        "approved_on": "2025-04-20",
         "cheque_no": "",
         "is_opening": "No",
-        "posting_date": "2025-02-13",
-        "title": "My First JE",
+        "posting_date": "2025-01-10",
+        "title": "My Second JE",
         "user_remark": "No Other comments",
         "voucher_type": "Journal Entry",
-        "accounts": [
-            {
-            "account": "1110 - Creditors - DCL",
-            "party_type": "Supplier",
-            "party": "ABC Ltd",
-            "debit_in_account_currency": 0,
-            "credit_in_account_currency": 5000
+        "transaction_code": "CPO",
+        "transaction_currency": "USD",
+        "exchange_rate": 130,
+        "accounts": [{
+                "account": "1110",
+                "party_type": null, 
+                "party": null,
+                "debit_in_transaction_currency": 0,
+                "credit_in_transaction_currency": 2000
             },
             {
-            "account": "5201 - Administrative Expenses - DCL",
-            "party_type": null,
-            "party": null,
-            "debit_in_account_currency": 5000,
-            "credit_in_account_currency": 0
+                "account": "1310",
+                "party_type": "Customer", 
+                "party": "Nyaga",
+                "debit_in_transaction_currency": 2000,
+                "credit_in_transaction_currency": 0
             }
         ]
     }
