@@ -14,6 +14,11 @@ Create a Purchase Invoice
 .. code-block:: json
 
     {
+        "transaction_date": "2025-04-10",
+        "created_by": "Nyaga",
+        "created_on": "2025-04-16",
+        "approved_by": "Steve",
+        "approved_on": "2025-04-20",
         "title": "First Purchase Invoice",
         "supplier": "Summit Traders Ltd.",
         "posting_date": "2025-02-01",
@@ -61,6 +66,11 @@ Create a Multi-currency Purchase Invoice
 .. code-block:: json
 
     {
+        "transaction_date": "2025-04-10",
+        "created_by": "Nyaga",
+        "created_on": "2025-04-16",
+        "approved_by": "Steve",
+        "approved_on": "2025-04-20",
         "title": "First Purchase Invoice",
         "supplier": "Summit Traders Ltd.",
         "posting_date": "2025-02-01",
@@ -105,6 +115,11 @@ Create a Purchase Invoice specifying the transaction code
 .. code-block:: json
 
     {
+        "transaction_date": "2025-04-10",
+        "created_by": "Nyaga",
+        "created_on": "2025-04-16",
+        "approved_by": "Steve",
+        "approved_on": "2025-04-20",
         "title": "First Purchase Invoice",
         "supplier": "Summit Traders Ltd.",
         "posting_date": "2025-02-01",

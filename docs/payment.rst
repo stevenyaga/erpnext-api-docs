@@ -30,6 +30,11 @@ Create a Supplier Payment Entry
 .. code-block:: json
 
     {
+        "transaction_date": "2025-04-10",
+        "created_by": "Nyaga",
+        "created_on": "2025-04-16",
+        "approved_by": "Steve",
+        "approved_on": "2025-04-20",
         "payment_type": "Pay",
         "mode_of_payment": "Cash",
         "party_type": "Supplier",
@@ -77,6 +82,11 @@ Create a Multi-Currency Supplier Payment Entry
 .. code-block:: json
 
     {
+        "transaction_date": "2025-04-10",
+        "created_by": "Nyaga",
+        "created_on": "2025-04-16",
+        "approved_by": "Steve",
+        "approved_on": "2025-04-20",
         "payment_type": "Pay",
         "mode_of_payment": "Wire Transfer USD",
         "party_type": "Supplier",
@@ -123,6 +133,11 @@ Create a Customer Payment Entry
 .. code-block:: json
 
     {
+        "transaction_date": "2025-04-10",
+        "created_by": "Nyaga",
+        "created_on": "2025-04-16",
+        "approved_by": "Steve",
+        "approved_on": "2025-04-20",
         "title": "First Customer Payment",
         "payment_type": "Receive",
         "mode_of_payment": "Cash",
@@ -168,6 +183,11 @@ Create a Multi-Currency Customer Payment Entry
 .. code-block:: json
 
     {
+        "transaction_date": "2025-04-10",
+        "created_by": "Nyaga",
+        "created_on": "2025-04-16",
+        "approved_by": "Steve",
+        "approved_on": "2025-04-20",
         "title": "First Multi Currency Payment",
         "payment_type": "Receive",
         "mode_of_payment": "Wire Transfer USD",
