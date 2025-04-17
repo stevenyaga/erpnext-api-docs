@@ -71,7 +71,7 @@ General Ledger
         "include_default_book_entries": true,
         "show_cancelled_entries": false,
         "show_net_values_in_party_account": false,
-        "add_values_in_transaction_currency": false,
+        "add_values_in_transaction_currency": true,
         "show_remarks": false,
         "ignore_err": false,
         "ignore_cr_dr_notes": false
