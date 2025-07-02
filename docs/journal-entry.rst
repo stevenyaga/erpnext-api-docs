@@ -211,3 +211,35 @@ Delete a Journal Entry
         "Authorization": "token <YOUR_TOKEN>"
     }
 
+
+Reverse a Journal Entry
+-----------------------
+
+- Endpoint: |BASE_API_URL|.journal_entry.reverse
+- Method: **POST**
+- Payload:
+
+.. code-block:: json
+
+    {
+        "doc_id_": "<DOC_ID>",
+        "posting_date": "2025-04-10"
+    }
+
+
+- Headers:
+
+.. code-block:: json
+
+    {
+        "Authorization": "token <YOUR_TOKEN>"
+    }
+
+
+.. note:: 
+
+    - By default, reversing a journal copies field values of the source Journal Entry into the new Journal Entry record
+    - The credit and debit values for the accounts are reversed
+    - If you want to set different values of other fields (except **posting_date** and **journals**), pass them as parameters just like the payload for create journal entry API
+    - If you want to retrieve the source journal, get its value from **reversal_of** field
+
