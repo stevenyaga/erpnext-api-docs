@@ -34,6 +34,8 @@ Create a Purchase Invoice
         "supplier": "Summit Traders Ltd.",
         "posting_date": "2025-02-01",
         "due_date": "2025-02-27",
+        "supplier_invoice_no": "PNT/233/3000",
+        "supplier_invoice_date": "2025-02-27",
         "items": [
             {
                 "item": "Tractor",
@@ -97,6 +99,8 @@ Create a Multi-currency Purchase Invoice
         "supplier": "Summit Traders Ltd.",
         "posting_date": "2025-02-01",
         "due_date": "2025-02-27",
+        "supplier_invoice_no": "PNT/233/3000",
+        "supplier_invoice_date": "2025-02-27",
         "currency": "USD",
         "exchange_rate": 2598.4401,
         "items": [
@@ -157,6 +161,8 @@ Create a Purchase Invoice specifying the transaction code
         "supplier": "Summit Traders Ltd.",
         "posting_date": "2025-02-01",
         "due_date": "2025-02-27",
+        "supplier_invoice_no": "PNT/233/3000",
+        "supplier_invoice_date": "2025-02-27",
         "items": [
             {
                 "item": "Fork list",
