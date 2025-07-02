@@ -195,3 +195,110 @@ After deleting these journals, you can now call this endpoint
     }
 
 
+Exchange Rate Revaluation Report
+--------------------------------
+
+**1. To get a report of the accounts that can be revalued at a specific point in time, call this end point**
+
+- Endpoint: |BASE_API_URL|.exchange_rate_revaluation.get_accounts_to_revalue
+- Method: **POST**
+- Payload:
+
+.. code-block:: json
+
+    {
+        "as_at_date": "2025-06-30"
+    }
+
+- Headers
+
+.. code-block:: json
+
+    {
+       "Authorization": "token <YOUR_TOKEN>"
+    }
+
+- The response will be of the from
+
+.. code-block:: json
+
+    {
+        "message": {
+            "success": true,
+            "status": 200,
+            "data": [
+                {
+                    "account": "1201 - KCB - USD - DCL",
+                    "party_type": "",
+                    "party": "",
+                    "account_currency": "USD",
+                    "balance_in_base_currency": 256000.0,
+                    "balance_in_account_currency": 2000.0,
+                    "zero_balance": false,
+                    "current_exchange_rate": 128.0,
+                    "new_exchange_rate": 0.0,
+                    "new_balance_in_base_currency": 0.0,
+                    "new_balance_in_account_currency": 2000.0,
+                    "gain_loss": -256000.0
+                }
+            ]
+        }
+    }
+
+
+**2. To get a report of all Exchange Rate Revaluations, call this end point**
+
+- Endpoint: |BASE_API_URL|.exchange_rate_revaluation.list
+- Method: **GET**
+- Payload:
+
+.. code-block:: json
+
+    {
+        "doctype": "Exchange Rate Revaluation",
+        "fields": ["name", "posting_date", "total_gain_loss"],
+        "filters": [["posting_date", ">=", "1970-01-01"]],
+        "start": 0,
+        "page_length": 0,
+        "order_by": "creation desc"
+    }
+
+- Headers
+
+.. code-block:: json
+
+    {
+        "Authorization": "token <YOUR_TOKEN>"
+    }
+ 
+
+**3. To get a report of all journal entries for Exchange Rate Revaluation and Reversals**, call the Journal Entry **list** API while passing the appropriate filter on **voucher type**. See below
+
+- Endpoint: |BASE_API_URL|.journal_entry.list
+- Method: **GET**
+- Payload:
+
+.. code-block:: json
+
+    {
+        "fields": [
+            "name",
+            "title",
+            "posting_date",
+            "voucher_type",
+            "total_amount_currency"
+        ],
+        "filters": [["voucher_type", "=", "Exchange Gain Or Loss"]],
+        "start": 0,
+        "page_length": 0,
+        "order_by": "creation desc"
+    }
+
+
+- Headers:
+
+.. code-block:: json
+
+    {
+        "Authorization": "token <YOUR_TOKEN>"
+    }

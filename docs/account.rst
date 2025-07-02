@@ -35,6 +35,7 @@ Get list of accounts
 
 - Refer to `Document List API Parameters <general-guidance.html>`_ for guidance on the payload
 
+
 Create an Account
 -----------------
 
@@ -90,7 +91,8 @@ Update an Account
     }
 
 
-- These fields may not be exhaustive. Check the general guidance section on how to check all the parameters that an endpoint can accept
+- These fields are not exhaustive. Check the general guidance section on how to check all the parameters that an endpoint can accept
+
 
 Delete an Account
 -----------------
@@ -137,3 +139,38 @@ Get a single Account details
         "Authorization": "token <YOUR_TOKEN>"
     }
 
+
+Enable/Disable an account
+-------------------------
+
+To disable (freeze) or enable (unfreeze) an account, use this endpoint
+
+- Endpoint: |BASE_API_URL|.account.toggle_status
+- Method: **POST**
+- Payload:
+
+.. code-block:: json
+
+    {
+        "account_number": "1110",
+        "enabled": 0
+    }
+
+
+- Headers
+
+.. code-block:: json
+
+    {
+        "Authorization": "token <YOUR_TOKEN>"
+    }
+
+
+.. warning:: 
+
+    - When disabling an account, you can get this error message **You are not authorized to set Frozen value**. To resolve this error:
+
+        - Login to the backend and go to **Account Settings->Accounts Closing tab** and specify the value of **Role Allowed to Set Frozen Accounts and Edit Frozen Entries**
+        - Assign the role you have just specified to the user that you are using to authenticate in the backend
+    
+    - Freezing and unfreezing an account has extensive implications in the system and thus you need to restrict which user can freeze or unfreeze an account
