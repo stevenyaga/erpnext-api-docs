@@ -22,6 +22,9 @@ Welcome to erpnext-api's documentation!
    payment
    purchase-invoice
    budget
+   exchange-rate
+   exchange-rate-gain-loss
+   exchange-rate-revaluation
    financial-reports
    delete-data
 
