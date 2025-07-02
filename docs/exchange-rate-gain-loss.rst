@@ -48,3 +48,21 @@ When a company holds assets or liabilities denominated in a foreign currency, fl
 **Purpose of Reversal**
 
 The reversal ensures that unrealized gains or losses do not artificially inflate or deflate the company's profits or losses in a given period. 
+
+
+Pre-requisites
+--------------
+
+Some accounts need to be setup in the backend for Exchange Rate Revaluation to work as expected. 
+
+1. Go to Eclectics Settings page in the backend and set the following accounts:
+
+    - Realized Exchange Gain Account
+    - Realized Exchange Loss Account
+    - Unrealized Exchange Gain Account
+    - Unrealized Exchange Loss Account
+
+2. Go to Company List and select the correct Company. In the Accounts tab, set the following values
+
+    - Exchange Gain / Loss Account
+    - Unrealized Exchange Gain/Loss Account

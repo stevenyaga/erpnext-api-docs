@@ -33,3 +33,10 @@ ERPNext API Integration
 
        - Navigate to the _build directory and the PDF output will be inside that folder
 
+
+- Alternatively, you can run the build commands together as below
+
+.. code-block:: bash
+
+    sphinx-build docs/ docs/html/ && sphinx-build -M simplepdf docs/ docs/pdf
+
