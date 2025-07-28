@@ -4,6 +4,27 @@ Purchase invoice
 
 - This module handles purchase invoice operations which are also referred to as the LPO by the client
 
+
+Purchase Invoice Taxes
+----------------------
+
+Taxes in a Purchase Invoice can be computed in two ways:
+
+    * Apply a global tax rate
+    * Apply item-specific tax rate
+
+
+.. note::
+
+    **1. Apply a global tax rate**
+    
+    In this scenario, the taxes will be computed on the invoice total amount. To determine the tax rate to apply, a  `Purchase Taxes and Charges Template <purchase-tax-template.html>`_ must be attached to the invoice.
+
+    **2. Apply item-specific tax rate** 
+
+    In this scenario, specific tax computation is done on items that have a value of **item_tax_template** specified as the invoice is being created. If no item has a **item_tax_template** specified, the taxes will be computed based on the value of **taxes_and_charges** template specified. See `Item Tax Template <item-tax-template.html>`_
+
+
 Create a Purchase Invoice
 -------------------------
 
@@ -36,12 +57,22 @@ Create a Purchase Invoice
         "due_date": "2025-02-27",
         "supplier_invoice_no": "PNT/233/3000",
         "supplier_invoice_date": "2025-02-27",
+        "cost_center": "Main - EFTA",
+        "taxes_and_charges": "Tanzania VAT Exclusive - EFTA",
         "items": [
             {
                 "item": "Tractor",
                 "qty": 2,
-                "rate": 100
-            }
+                "rate": 100,
+                "expense_account": "999901",
+            },
+            {
+                "item": "15Ltr Drinking Water",
+                "qty": 2,
+                "rate": 1000,
+                "expense_account": "999901",
+                "item_tax_template": "Tanzania Zero Rated - EFTA"
+            },
         ]
     }
 

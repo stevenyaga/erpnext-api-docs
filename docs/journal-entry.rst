@@ -9,16 +9,18 @@ Create a Journal Entry - (Single currency/multi-currency)
 
 .. note:: 
 
-    - You provide the exchange_rate at the parent level and not at an account level
-    - Both legs of the journal entry must be denominated in the same transaction currency
+    - You can either provide the exchange_rate at the parent level or at an account level. When account level exchange rate is supplied, this takes precedence over parent level exchange rate
+    - You can optionally provide the transacting currency at an account level
+    - Please note that the exchange rate provided should be the exchange rate to convert transacting currency to the base currency
 
 .. warning::
 
-    Because of the complex nature of multicurrency such that we allow postings against an account in different currencies, it means that we can only make multicurrency posting against only accounts that **DO NOT HAVE** currency specified for them. This is because if we were to allow, then we will have to deal with two levels of exchange rate conversion i.e
+    - There is a need to allow some accounts (expenses/incomes) to post in multiple currencies. Because of the complex nature of multicurrency such that we allow postings against an account in different currencies, it means that we can only make multicurrency posting against only accounts that **DO NOT HAVE** currency specified for them. This is because if we were to allow, then we will have to deal with two levels of exchange rate conversion i.e
 
         - transaction currency -> account currency
         - account currency -> company base currency
-
+    - For Assets, Liabilities, Bank, Payables and Receivables accounts, the postings must be made using the account currency
+    
 
 - Endpoint: |BASE_API_URL|.journal_entry.create
 - Method: **POST**
@@ -106,13 +108,15 @@ Create a Journal Entry - (Single currency/multi-currency)
                 "party_type": null, 
                 "party": null,
                 "debit": 0,
-                "credit": 2000
+                "credit": 1000,
+                "exchange_rate": 130,
+                "cost_center": "Main - DLD"
             },
             {
                 "account": "1310",
                 "party_type": "Customer", 
                 "party": "Nyaga",
-                "debit": 2000,
+                "debit": 130000,
                 "credit": 0
             }
         ]

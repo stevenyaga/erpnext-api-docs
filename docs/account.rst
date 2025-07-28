@@ -50,10 +50,20 @@ Create an Account
         "account_number": "1110",
         "parent_account_number": "1100",
         "account_type": "",
-        "is_group": false
+        "is_group": false,
+        "tax_rate": 16,
+        "balance_must_be": "Debit",
+        "account_currency": "USD"
     }
 
 - Headers
+
+.. warning::
+
+    - Be careful when setting **balance_must_be** parameter as it might later restrict you to post credit entries if you have specified that the balance must be Debit and vice versa. Use this option sparingly 
+    - Setting account currency to a value other than the base currency restricts that transactions can only be posted in the specified currency
+    - Tax rate applies to accounts whose account type value has been set as **Tax**. Otherwise it is reset to 0
+ 
 
 .. code-block:: json
 
@@ -173,4 +183,6 @@ To disable (freeze) or enable (unfreeze) an account, use this endpoint
         - Login to the backend and go to **Account Settings->Accounts Closing tab** and specify the value of **Role Allowed to Set Frozen Accounts and Edit Frozen Entries**
         - Assign the role you have just specified to the user that you are using to authenticate in the backend
     
+    - Freezing an account restricts users from making new accounting entries before a set date
+    - Enabling/disabling an account updates **freeze_account** property
     - Freezing and unfreezing an account has extensive implications in the system and thus you need to restrict which user can freeze or unfreeze an account
