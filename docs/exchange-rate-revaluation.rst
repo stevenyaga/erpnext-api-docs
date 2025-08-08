@@ -162,10 +162,27 @@ Reverse Exchange Rate Revaluation
 
 Reversals of Exchange Revaluations are usually done at the beginning of a period. The reversal is for the exchange rate revaluation that was made in the previous month. Refer to `Exchange Rate Gain/Loss <exchange-rate-gain-loss.html>`_ for guidance on reversals
 
-To reverse an Exchange Rate Revaluation, follow the steps below:
+To reverse an Exchange Rate Revaluation using this endpoint:
 
-- Retrieve the list of Exchange Rate Revaluation and order them by the posting date. Get the most recent revaluation
-- Using the id of the most recent revaluation, call the **reverse** end point for journal entry. Refer to `Journal Entry API <journal-entry.html>`_ for guidance on the payload
+- Endpoint: |BASE_API_URL|.exchange_rate_revaluation.reverse
+- Method: **POST**
+- Payload:
+
+.. code-block:: json
+
+    {
+        "doc_id": "ACC-ERR-2025-00008",
+        "posting_date" : "2025-08-06", 
+        "company": "EQUITY FOR TANZANIA"
+    }
+
+- Headers
+
+.. code-block:: json
+
+    {
+        "Authorization": "token <YOUR_TOKEN>"
+    }
 
 
 Delete Exchange Rate Revaluation

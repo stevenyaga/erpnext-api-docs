@@ -55,6 +55,7 @@ Create a Supplier Payment Entry
         "transaction_code": "COP",
         "reference_no": null,
         "reference_date": null,
+        "payable_receivable_account": "0001906-TZS",
         "payment_references": [
             {
                 "document_type": "Purchase Invoice",
@@ -119,6 +120,7 @@ Create a Multi-Currency Supplier Payment Entry
         "exchange_rate": 2598.4401,
         "reference_no": "TRFFFSG245874",
         "reference_date": "2025-01-31",
+        "payable_receivable_account": "0001906-TZS",
         "payment_references": [
             {
                 "document_type": "Purchase Invoice",
@@ -180,6 +182,7 @@ Create a Customer Payment Entry
         "posting_date": "2025-02-19",
         "reference_no": null,
         "reference_date": null,
+        "payable_receivable_account": "0001906-TZS",
         "payment_references": [
             {
                 "document_name": "ACC-SINV-2025-00003",
@@ -242,6 +245,7 @@ Create a Multi-Currency Customer Payment Entry
         "exchange_rate": 2598.4401,
         "reference_no": "TRSG232XX344",
         "reference_date": "2025-01-31",
+        "payable_receivable_account": "0001906-TZS",
         "payment_references": [
             {
                 "document_name": "ACC-SINV-2025-00003",
