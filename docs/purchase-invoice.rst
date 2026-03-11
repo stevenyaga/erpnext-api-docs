@@ -134,6 +134,7 @@ Create a Multi-currency Purchase Invoice
         "supplier_invoice_date": "2025-02-27",
         "currency": "USD",
         "exchange_rate": 2598.4401,
+        "payable_account": "21990",
         "items": [
             {
                 "item": "Tractor",
@@ -154,6 +155,10 @@ Create a Multi-currency Purchase Invoice
 
 
 - These fields may not be exhaustive. Check the general guidance section on how to check all the parameters that an endpoint can accept
+
+.. note::
+    
+    The **payable_account** must be passed in the payload when the transaction currency is a foreign currency.
 
 
 Create a Purchase Invoice specifying the transaction code

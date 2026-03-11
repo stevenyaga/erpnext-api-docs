@@ -27,6 +27,8 @@ Welcome to erpnext-api's documentation!
    exchange-rate-gain-loss
    exchange-rate
    exchange-rate-revaluation
+   withholding_tax
+   withholding_tax_category
    financial-reports
    delete-data
 
