@@ -247,3 +247,73 @@ Reverse a Journal Entry
     - If you want to set different values of other fields (except **posting_date** and **journals**), pass them as parameters just like the payload for create journal entry API
     - If you want to retrieve the source journal, get its value from **reversal_of** field
 
+Journal Entry Bulk Upload
+-------------------------
+
+- Endpoint: |BASE_API_URL|.journal_entry.bulk_upload
+- Method: **POST**
+- Payload:
+
+.. code-block:: json
+
+    {
+        "items": [
+            {
+                "company_code": "EFTA",
+                "posting_date": "2025-07-31 00:00:00",
+                "document_type": null,
+                "document_no": "G95226",
+                "account_type": "G/L Account",
+                "account_no": "940500",
+                "posting_group": null,
+                "contract_no": null,
+                "description": "Annual FSA Audit 2025",
+                "amount": 1466174,
+                "currency_code": null,
+                "amount_lcy": 1466174,
+                "deferral_code": null,
+                "branch_dim_code": "CFO",
+                "correction": "No",
+                "applies_to_doc_type": null,
+                "applies_to_doc_name": null,
+                "comment": null,
+                "fa_posting_type": null
+            },
+            {
+                "company_code": "EFTA",
+                "posting_date": "2025-07-31 00:00:00",
+                "document_type": null,
+                "document_no": "G95226",
+                "account_type": "G/L Account",
+                "account_no": "940505",
+                "posting_group": null,
+                "contract_no": null,
+                "description": "Annual IT Audit 2025",
+                "amount": -1466174,
+                "currency_code": null,
+                "amount_lcy": -1466174,
+                "deferral_code": null,
+                "branch_dim_code": "CFO",
+                "correction": "No",
+                "applies_to_doc_type": null,
+                "applies_to_doc_name": null,
+                "comment": null,
+                "fa_posting_type": null
+            }
+        ]
+    }
+
+
+- Headers:
+
+.. code-block:: json
+
+    {
+        "Authorization": "token <YOUR_TOKEN>"
+    }
+
+
+.. note:: 
+
+    - A positive value of *amount* is assumed to be a debit entry. A negative is assumed to be a credit entry
+

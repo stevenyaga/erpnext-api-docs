@@ -73,7 +73,8 @@ To get the list of accounts that can be revalued at a specific point (end of mon
 .. code-block:: json
 
     {
-        "as_at_date": "2025-06-30"
+        "as_at_date": "2025-06-30",
+        "show_summarized": true
     }
 
 - Headers
@@ -118,7 +119,7 @@ To get the list of accounts that can be revalued at a specific point (end of mon
 
     - Use this **get_accounts_to_revalue** to get a list of the accounts to be revalued as you are creating an Exchange Rate Revaluation record. Use it to get the accounts to revalue including the current balance
     - Getting the list of revaluable accounts is important in situations when an institution does not want to revalue all the foreign currency denominated accounts
-
+    - If the value of show_summarized parameter is true, the result will be grouped by distinct accounts. If the value is false, the result will be for all transactions that need revaluation
 
 To create an Exchange Rate Revaluation record, call this endpoint
 
@@ -135,7 +136,11 @@ To create an Exchange Rate Revaluation record, call this endpoint
         "accounts": [{
                     "account": "1201"
                 }
-            ]
+            ],
+        "created_by": "Nyaga",
+        "created_on": "2025-04-16",
+        "approved_by": "Steve",
+        "approved_on": "2025-04-20",
     }
 
 - Headers
@@ -173,7 +178,12 @@ To reverse an Exchange Rate Revaluation using this endpoint:
     {
         "doc_id": "ACC-ERR-2025-00008",
         "posting_date" : "2025-08-06", 
-        "company": "EQUITY FOR TANZANIA"
+        "company": "EQUITY FOR TANZANIA",
+        "reversal_reason": "Sample reason",
+        "created_by": "Nyaga",
+        "created_on": "2025-04-16",
+        "approved_by": "Steve",
+        "approved_on": "2025-04-20",
     }
 
 - Headers

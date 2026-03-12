@@ -53,7 +53,9 @@ Create an Account
         "is_group": false,
         "tax_rate": 16,
         "balance_must_be": "Debit",
-        "account_currency": "USD"
+        "account_currency": "USD",
+        "is_restricted": false,
+        "do_not_show_in_trial_balance": false
     }
 
 - Headers
@@ -88,7 +90,9 @@ Update an Account
         "account_name": "Updated Cash 2",
         "parent_account_number": "1100",
         "account_type": "",
-        "is_group": false
+        "is_group": false,
+        "is_restricted": false,
+        "do_not_show_in_trial_balance": false
     }
 
 
