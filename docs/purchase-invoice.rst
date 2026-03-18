@@ -59,6 +59,7 @@ Create a Purchase Invoice
         "supplier_invoice_date": "2025-02-27",
         "cost_center": "Main - EFTA",
         "taxes_and_charges": "Tanzania VAT Exclusive - EFTA",
+        "tax_withholding_category": "Withholding Tax (5%)",
         "items": [
             {
                 "item": "Tractor",
@@ -71,7 +72,8 @@ Create a Purchase Invoice
                 "qty": 2,
                 "rate": 1000,
                 "expense_account": "999901",
-                "item_tax_template": "Tanzania Zero Rated - EFTA"
+                "item_tax_template": "Tanzania Zero Rated - EFTA",
+                "asset_type": "Motor Vehicle"
             },
         ]
     }
@@ -135,6 +137,7 @@ Create a Multi-currency Purchase Invoice
         "currency": "USD",
         "exchange_rate": 2598.4401,
         "payable_account": "21990",
+        "tax_withholding_category": "Withholding Tax (5%)",
         "items": [
             {
                 "item": "Tractor",
@@ -199,6 +202,7 @@ Create a Purchase Invoice specifying the transaction code
         "due_date": "2025-02-27",
         "supplier_invoice_no": "PNT/233/3000",
         "supplier_invoice_date": "2025-02-27",
+        "tax_withholding_category": "Withholding Tax (5%)",
         "items": [
             {
                 "item": "Fork list",
@@ -285,3 +289,16 @@ Delete a Purchase Invoice
         "doc_id_": "ACC-PINV-2025-00010"
     }
 
+
+Cancel a Purchase Invoice
+-------------------------
+
+- Endpoint: |BASE_API_URL|.purchase_invoice.cancel
+- Method: **DELETE**
+- Payload:
+
+.. code-block:: json
+
+    {
+        "doc_id_": "ACC-PINV-2025-00010"
+    }
