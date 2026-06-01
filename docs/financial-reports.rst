@@ -11,6 +11,9 @@ Trial Balance
     - **from_date** (optional). End date by which you wish to filter transactions. The date must fall within the selected fiscal year
     - **as_tree** (optional). If set to true, the Trial Balance will be return in a tree format
     - **show_zero_values** (optional). If set to true, the Trial Balance will show all the accounts including those with zero balances
+    - **show_disabled_accounts** (optional). If set to true, the Trial Balance will show all the accounts including those that are disabled
+    - **show_hidden_accounts** (optional). If set to true, the Trial Balance will show all the accounts including those that are to be hiddent from the Trial Balance
+    - **show_restricted_accounts** (optional). If set to true, the Trial Balance will show all accounts including those that are restricted
    
 - Endpoint: |BASE_API_URL|.financial_report.trial_balance
 - Method: **POST**
@@ -27,7 +30,10 @@ Trial Balance
         "with_period_closing_entry_for_current_period": true,
         "include_default_book_entries": true,
         "show_net_values": true,
-        "show_zero_values": true
+        "show_zero_values": true,
+        "show_disabled_accounts": false,
+        "show_hidden_accounts": false,
+        "show_restricted_accounts": false
     }
 
 - Headers:
