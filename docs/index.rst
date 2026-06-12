@@ -20,6 +20,7 @@ Welcome to erpnext-api's documentation!
    project
    journal-entry
    payment
+   payment-reconciliation
    item-tax-template
    purchase-tax-template
    purchase-invoice
