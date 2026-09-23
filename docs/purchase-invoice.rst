@@ -60,12 +60,16 @@ Create a Purchase Invoice
         "cost_center": "Main - EFTA",
         "taxes_and_charges": "Tanzania VAT Exclusive - EFTA",
         "tax_withholding_category": "Withholding Tax (5%)",
+        "invoice_discount_percentage": 10,
         "items": [
             {
                 "item": "Tractor",
                 "qty": 2,
                 "rate": 100,
                 "expense_account": "999901",
+                "cost_center": "3 - Arusha - EFTA",
+                "item_discount_percentage": 10,
+                "item_remarks": "Item 1 REmarks"
             },
             {
                 "item": "15Ltr Drinking Water",
@@ -73,7 +77,9 @@ Create a Purchase Invoice
                 "rate": 1000,
                 "expense_account": "999901",
                 "item_tax_template": "Tanzania Zero Rated - EFTA",
-                "asset_type": "Motor Vehicle"
+                "asset_type": "Motor Vehicle",
+                "item_discount_percentage": 5,
+                "item_remarks": "Item 2 REmarks"
             },
         ]
     }
@@ -89,6 +95,84 @@ Create a Purchase Invoice
 
 
 - These fields may not be exhaustive. Check the general guidance section on how to check all the parameters that an endpoint can accept
+
+Create a Purchase Invoice With Item-Wise Withholding Tax
+--------------------------------------------------------
+
+- Endpoint: |BASE_API_URL|.purchase_invoice.create
+- Method: **POST**
+- Payload:
+
+.. code-block:: json
+
+    {
+        "transaction_date": "2025-04-10",
+        "created_by": "Nyaga",
+        "created_on": "2025-04-16",
+        "approved_by": "Steve",
+        "approved_on": "2025-04-20",
+        "company_code": "001",
+        "branch_code": "Branch 2",
+        "branch_dim_code": "Branch Dim 2",
+        "document_type": "Contractual",
+        "document_no": "333/45",
+        "contract_no": "333/45/2025",
+        "customer_no": "CUST-1",
+        "customer_name": "XYZ Customer",
+        "reversed": false,
+        "document_date": "2025-01-02",
+        "enquiry_no": "INQ/1/2025",
+        "title": "First Purchase Invoice",
+        "supplier": "Summit Traders Ltd.",
+        "posting_date": "2025-02-01",
+        "due_date": "2025-02-27",
+        "supplier_invoice_no": "PNT/233/3000",
+        "supplier_invoice_date": "2025-02-27",
+        "cost_center": "Main - EFTA",
+        "taxes_and_charges": "Tanzania VAT Exclusive - EFTA", 
+        "invoice_discount_percentage": 10,
+        "items": [
+            {
+                "item": "Tractor",
+                "qty": 2,
+                "rate": 100,
+                "expense_account": "999901",
+                "tax_withholding_category": "Withholding Tax (15%)",
+                "item_discount_percentage": 10,
+                "item_remarks": "Item 1 REmarks"
+            },
+            {
+                "item": "15Ltr Drinking Water",
+                "qty": 2,
+                "rate": 1000,
+                "expense_account": "999901",
+                "item_tax_template": "Tanzania Zero Rated - EFTA",
+                "tax_withholding_category": "Withholding Tax (5%)",
+                "asset_type": "Motor Vehicle",
+                "item_discount_percentage": 5,
+                "item_remarks": "Item 2 REmarks"
+            },
+        ]
+    }
+
+
+- Headers:
+
+.. code-block:: json
+
+    {
+        "Authorization": "token <YOUR_TOKEN>"
+    }
+
+
+- These fields may not be exhaustive. Check the general guidance section on how to check all the parameters that an endpoint can accept
+- If you are applying different withhold tax rates for different items in the purchase invoice, specify the WHT category at each item level
+- If you want to apply the same WHT category for all items, specify the WHT Category at the invoice level
+
+
+.. note::
+
+    You cannot specify the WHT Category for invoice level and item levels at the the same time. It is either at invoice level or item level but not both
 
 
 Create a Multi-currency Purchase Invoice
@@ -138,11 +222,14 @@ Create a Multi-currency Purchase Invoice
         "exchange_rate": 2598.4401,
         "payable_account": "21990",
         "tax_withholding_category": "Withholding Tax (5%)",
+        "invoice_discount_percentage": 10,
         "items": [
             {
                 "item": "Tractor",
                 "qty": 2,
-                "rate": 100
+                "rate": 100,
+                "item_discount_percentage": 5,
+                "item_remarks": "Item 2 REmarks"
             }
         ]
     }
@@ -208,7 +295,9 @@ Create a Purchase Invoice specifying the transaction code
                 "item": "Fork list",
                 "expense_account_number": "5204",
                 "qty": 2,
-                "rate": 100
+                "rate": 100,
+                "item_discount_percentage": 5,
+                "item_remarks": "Item 2 REmarks"
             }
         ]
     }
