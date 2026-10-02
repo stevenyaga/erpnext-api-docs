@@ -73,8 +73,9 @@ To get the list of accounts that can be revalued at a specific point (end of mon
 .. code-block:: json
 
     {
-        "as_at_date": "2025-06-30",
-        "show_summarized": true
+        "as_at_date": "2025-09-01",
+        "new_exchange_rates": [{"currency": "USD", "exchange_rate": 1000}, {"currency": "EUR", "exchange_rate": 900}], 
+        "show_summarized": false
     }
 
 - Headers
@@ -120,6 +121,7 @@ To get the list of accounts that can be revalued at a specific point (end of mon
     - Use this **get_accounts_to_revalue** to get a list of the accounts to be revalued as you are creating an Exchange Rate Revaluation record. Use it to get the accounts to revalue including the current balance
     - Getting the list of revaluable accounts is important in situations when an institution does not want to revalue all the foreign currency denominated accounts
     - If the value of show_summarized parameter is true, the result will be grouped by distinct accounts. If the value is false, the result will be for all transactions that need revaluation
+    - Pass the list of currencies and their exchange rates as a list 
 
 To create an Exchange Rate Revaluation record, call this endpoint
 
@@ -131,8 +133,8 @@ To create an Exchange Rate Revaluation record, call this endpoint
 
     {
         "posting_date" : "2025-06-30", 
-        "company": "Demo Company Ltd",
-        "new_exchange_rate" : 131, 
+        "company": "Demo Company Ltd", 
+        "new_exchange_rates": [{"currency": "USD", "exchange_rate": 1000}, {"currency": "EUR", "exchange_rate": 900}], 
         "accounts": [{
                     "account": "1201"
                 }
@@ -160,7 +162,7 @@ To create an Exchange Rate Revaluation record, call this endpoint
         2. Call the **create** end point with the relevant payload 
 
     - Exchange Rate Revaluations are made at the end of a period e.g month or financial year. You can automate this process by having a scheduled job
-
+    - Pass the list of currencies and their exchange rates as a list 
 
 Reverse Exchange Rate Revaluation
 ---------------------------------
