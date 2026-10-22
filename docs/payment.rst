@@ -19,6 +19,9 @@ Supplier & Customer Payment
 - If you are unsure which ID it is, you can get the ids using the **.list** endpoint of the respective document type such as {SERVER_URL}/api/method/eclectics.api.purchase_invoice.list and pass the relevant filters. You can then filter through the returned items and pick the one of interest
 - The standard type of the document must also be specified e.g Purchase Invoice
 
+.. warning:: 
+  - The API assumes that the value of **allocated_amount** is specified in the currency making the payment and not the currency of the invoice
+
 
 Create a Supplier Payment Entry
 -------------------------------
@@ -76,6 +79,7 @@ Create a Supplier Payment Entry
 
 
 - These fields may not be exhaustive. Check the general guidance section on how to check all the parameters that an endpoint can accept
+
 
 Create a Multi-Currency Supplier Payment Entry
 ----------------------------------------------

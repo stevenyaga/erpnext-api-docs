@@ -61,6 +61,7 @@ Create a Purchase Invoice
         "taxes_and_charges": "Tanzania VAT Exclusive - EFTA",
         "tax_withholding_category": "Withholding Tax (5%)",
         "invoice_discount_percentage": 10,
+        "invoice_discount_account": "507060 - Star Performance Income - EFTA",
         "items": [
             {
                 "item": "Tractor",
@@ -69,7 +70,8 @@ Create a Purchase Invoice
                 "expense_account": "999901",
                 "cost_center": "3 - Arusha - EFTA",
                 "item_discount_percentage": 10,
-                "item_remarks": "Item 1 REmarks"
+                "item_discount_account": "Invoice Discount Received - EFTA",
+                "item_remarks": "Item 1 REmarks",
             },
             {
                 "item": "15Ltr Drinking Water",
@@ -79,6 +81,7 @@ Create a Purchase Invoice
                 "item_tax_template": "Tanzania Zero Rated - EFTA",
                 "asset_type": "Motor Vehicle",
                 "item_discount_percentage": 5,
+                "item_discount_account": "507020 - Finance Income - Other - EFTA",
                 "item_remarks": "Item 2 REmarks"
             },
         ]
